@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/gameengine.dir/src/Game.cpp.o CMakeFiles/gameengine.dir/src/Main.cpp.o -o gameengine  -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer -llua -ldl 

@@ -1,0 +1,3 @@
+/home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/build/CMakeFiles/rebuild_cache.dir
+/home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/build/CMakeFiles/edit_cache.dir
+/home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/build/CMakeFiles/gameengine.dir
