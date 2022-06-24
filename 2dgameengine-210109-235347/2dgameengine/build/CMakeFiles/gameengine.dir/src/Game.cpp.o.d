@@ -455,4 +455,6 @@ CMakeFiles/gameengine.dir/src/Game.cpp.o: \
  /usr/include/c++/9/forward_list /usr/include/c++/9/bits/forward_list.h \
  /usr/include/c++/9/bits/forward_list.tcc /usr/include/c++/9/algorithm \
  /usr/include/c++/9/pstl/glue_algorithm_defs.h /usr/include/c++/9/sstream \
- /usr/include/c++/9/bits/sstream.tcc
+ /usr/include/c++/9/bits/sstream.tcc \
+ /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Logger.h \
+ /usr/include/c++/9/chrono /usr/include/c++/9/ratio

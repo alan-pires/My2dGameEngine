@@ -6,6 +6,7 @@ cmake_policy(SET CMP0009 NEW)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/*.cpp")
 set(OLD_GLOB
   "/home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game.cpp"
+  "/home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Logger.cpp"
   "/home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Main.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")

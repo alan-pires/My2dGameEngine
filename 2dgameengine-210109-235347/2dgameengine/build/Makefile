@@ -154,6 +154,30 @@ src/Game.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gameengine.dir/build.make CMakeFiles/gameengine.dir/src/Game.cpp.s
 .PHONY : src/Game.cpp.s
 
+src/Logger.o: src/Logger.cpp.o
+.PHONY : src/Logger.o
+
+# target to build an object file
+src/Logger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gameengine.dir/build.make CMakeFiles/gameengine.dir/src/Logger.cpp.o
+.PHONY : src/Logger.cpp.o
+
+src/Logger.i: src/Logger.cpp.i
+.PHONY : src/Logger.i
+
+# target to preprocess a source file
+src/Logger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gameengine.dir/build.make CMakeFiles/gameengine.dir/src/Logger.cpp.i
+.PHONY : src/Logger.cpp.i
+
+src/Logger.s: src/Logger.cpp.s
+.PHONY : src/Logger.s
+
+# target to generate assembly for a file
+src/Logger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gameengine.dir/build.make CMakeFiles/gameengine.dir/src/Logger.cpp.s
+.PHONY : src/Logger.cpp.s
+
 src/Main.o: src/Main.cpp.o
 .PHONY : src/Main.o
 
@@ -190,6 +214,9 @@ help:
 	@echo "... src/Game.o"
 	@echo "... src/Game.i"
 	@echo "... src/Game.s"
+	@echo "... src/Logger.o"
+	@echo "... src/Logger.i"
+	@echo "... src/Logger.s"
 	@echo "... src/Main.o"
 	@echo "... src/Main.i"
 	@echo "... src/Main.s"

@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "Logger.h"
 #include <iostream>
 
 // Global Variables
@@ -8,18 +9,19 @@ glm::vec2 playerVeloc;
 Game::Game()
 {
 	isRunning = false;
+	Logger::Log("Game Constructor Called");
 }
 
 Game:: ~Game()
 {
-
+	Logger::Log("Game Destructor Called");
 }
 
 void	Game::Initialize()
 {
 	if (SDL_Init(SDL_INIT_EVERYTHING) != 0)
 	{
-		std::cerr << "Error initializing SDL" << std::endl;
+		Logger::Err("Error initializing SDL");
 		return;
 	}
 
@@ -38,14 +40,14 @@ void	Game::Initialize()
 	);
 	if (!window)
 	{
-		std::cerr << "Error creating SDL Window" << std::endl;
+		Logger::Err("Error creating SDL Window");
 		return;
 	}
 
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 	if (!renderer)
 	{
-		std::cerr << "Error creating SDL Renderer" << std::endl;
+		Logger::Err("Error creating SDL Renderer");
 		return;
 	}
 	// SDL_SetWindowFullscreen(window, SDL_WINDOW_FULLSCREEN);
