@@ -9,12 +9,16 @@
 #include <imgui/imgui.h>
 #include <sol/sol.hpp>
 
+const int FPS = 30;
+const int MILLISECS_PER_FRAME = 1000/FPS;
+
 class Game
 {
 	private:
 		SDL_Window *window;
 		SDL_Renderer *renderer;
 		bool isRunning;
+		int millisecsPreviousFrame = 0;
 
 	public:
 		Game();
@@ -25,6 +29,10 @@ class Game
 		void	Update();
 		void	Render();
 		void	Destroy();
+		void	Setup();
+
+		uint windowWidth;
+		uint windowHeight;
 };
 
 #endif

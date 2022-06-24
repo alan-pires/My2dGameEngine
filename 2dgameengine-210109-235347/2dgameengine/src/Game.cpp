@@ -1,10 +1,13 @@
 #include "Game.h"
 #include <iostream>
 
+// Global Variables
+glm::vec2 playerPos;
+glm::vec2 playerVeloc;
+
 Game::Game()
 {
 	isRunning = false;
-	std::cout << "Game was constructed" << std::endl;
 }
 
 Game:: ~Game()
@@ -19,12 +22,18 @@ void	Game::Initialize()
 		std::cerr << "Error initializing SDL" << std::endl;
 		return;
 	}
+
+	SDL_DisplayMode displayMode;
+	SDL_GetCurrentDisplayMode(0, &displayMode);
+	windowWidth = 800;
+	windowHeight = 600;
+
 	window = SDL_CreateWindow(
 		"Engine",
 		 SDL_WINDOWPOS_CENTERED,
 		 SDL_WINDOWPOS_CENTERED,
-		 800,
-		 600,
+		 windowWidth,
+		 windowHeight,
 		 SDL_WINDOW_BORDERLESS
 	);
 	if (!window)
@@ -32,17 +41,21 @@ void	Game::Initialize()
 		std::cerr << "Error creating SDL Window" << std::endl;
 		return;
 	}
-	renderer = SDL_CreateRenderer(window, -1, 0);
+
+	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 	if (!renderer)
 	{
 		std::cerr << "Error creating SDL Renderer" << std::endl;
 		return;
 	}
+	// SDL_SetWindowFullscreen(window, SDL_WINDOW_FULLSCREEN);
+
 	isRunning = true;
 }
 
 void	Game::Run()
 {
+	Setup();
 	while (isRunning)
 	{
 		ProcessInput();
@@ -71,15 +84,37 @@ void	Game::ProcessInput()
 	}
 }
 
+void	Game::Setup()
+{
+	playerPos = glm::vec2(10.0, 20.0);
+	playerVeloc = glm::vec2(50.0, 0.0);
+}
+
 void	Game::Update()
 {
+	int timeToWait = MILLISECS_PER_FRAME - (SDL_GetTicks() - millisecsPreviousFrame);
+	if (timeToWait > 0 && timeToWait <= MILLISECS_PER_FRAME)
+		SDL_Delay(timeToWait);
 
+	double deltaT = (SDL_GetTicks() - millisecsPreviousFrame) / 1000.0;
+
+	// stores the "previous" frame time (ticks after the SDL_Delay)
+	millisecsPreviousFrame = SDL_GetTicks();
+
+	playerPos.x += playerVeloc.x * deltaT;
+	playerPos.y += playerVeloc.y * deltaT;
 }
 
 void	Game::Render()
 {
-	SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+	SDL_SetRenderDrawColor(renderer, 21, 21, 21, 255);
 	SDL_RenderClear(renderer);
+	SDL_Surface *surface = IMG_Load("../assets/images/tank-tiger-right.png");
+	SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, surface);
+	SDL_FreeSurface(surface);
+	SDL_Rect destRect = {static_cast<int>(playerPos.x), static_cast<int>(playerPos.y), 32, 32};
+	SDL_RenderCopy(renderer, texture, NULL, &destRect);
+	SDL_DestroyTexture(texture);
 	SDL_RenderPresent(renderer);
 }
 
