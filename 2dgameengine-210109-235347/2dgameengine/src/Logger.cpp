@@ -1,5 +1,7 @@
 #include "Logger.h"
 
+std::vector<LogEntry> Logger::messages;
+
 std::string CurrentDateTimeToString()
 {
 	std::time_t now = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
@@ -10,12 +12,20 @@ std::string CurrentDateTimeToString()
 
 void Logger::Log(const std::string& message)
 {
-	std::string output = "LOG: [" + CurrentDateTimeToString() + "]: " + message;
-	std::cout << "\x1B[32m" << output << "\033[0m" << std::endl;
+	LogEntry logEntry;
+
+	logEntry.type = LOG_INFO;
+	logEntry.message = "LOG: [" + CurrentDateTimeToString() + "]: " + message;
+	std::cout << "\x1B[32m" << logEntry.message << "\033[0m" << std::endl;
+	messages.push_back(logEntry);
 }
 
 void Logger::Err(const std::string& message)
 {
-	std::string output = "ERR: [" + CurrentDateTimeToString() + "]" + message;
-	std::cerr << "\x1B[91m" << "\033[0m" << std::endl;
+	LogEntry logEntry;
+
+	logEntry.type = LOG_ERROR;
+	logEntry.message = "ERR: [" + CurrentDateTimeToString() + "]" + message;
+	messages.push_back(logEntry);
+	std::cerr << "\x1B[91m" << logEntry.message << "\033[0m" << std::endl;
 }

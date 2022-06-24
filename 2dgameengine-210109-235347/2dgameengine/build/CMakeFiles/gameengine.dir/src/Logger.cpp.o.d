@@ -141,4 +141,9 @@ CMakeFiles/gameengine.dir/src/Logger.cpp.o: \
  /usr/include/c++/9/bits/ostream.tcc /usr/include/c++/9/istream \
  /usr/include/c++/9/bits/istream.tcc /usr/include/c++/9/chrono \
  /usr/include/c++/9/ratio /usr/include/c++/9/ctime \
- /usr/include/c++/9/bits/parse_numbers.h
+ /usr/include/c++/9/bits/parse_numbers.h /usr/include/c++/9/vector \
+ /usr/include/c++/9/bits/stl_construct.h \
+ /usr/include/c++/9/bits/stl_uninitialized.h /usr/include/c++/9/utility \
+ /usr/include/c++/9/bits/stl_relops.h \
+ /usr/include/c++/9/bits/stl_vector.h \
+ /usr/include/c++/9/bits/stl_bvector.h /usr/include/c++/9/bits/vector.tcc
