@@ -130,53 +130,53 @@ gameengine/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gameengine.dir/build.make CMakeFiles/gameengine.dir/build
 .PHONY : gameengine/fast
 
-src/Game.o: src/Game.cpp.o
-.PHONY : src/Game.o
+src/Game/Game.o: src/Game/Game.cpp.o
+.PHONY : src/Game/Game.o
 
 # target to build an object file
-src/Game.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gameengine.dir/build.make CMakeFiles/gameengine.dir/src/Game.cpp.o
-.PHONY : src/Game.cpp.o
+src/Game/Game.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gameengine.dir/build.make CMakeFiles/gameengine.dir/src/Game/Game.cpp.o
+.PHONY : src/Game/Game.cpp.o
 
-src/Game.i: src/Game.cpp.i
-.PHONY : src/Game.i
+src/Game/Game.i: src/Game/Game.cpp.i
+.PHONY : src/Game/Game.i
 
 # target to preprocess a source file
-src/Game.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gameengine.dir/build.make CMakeFiles/gameengine.dir/src/Game.cpp.i
-.PHONY : src/Game.cpp.i
+src/Game/Game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gameengine.dir/build.make CMakeFiles/gameengine.dir/src/Game/Game.cpp.i
+.PHONY : src/Game/Game.cpp.i
 
-src/Game.s: src/Game.cpp.s
-.PHONY : src/Game.s
+src/Game/Game.s: src/Game/Game.cpp.s
+.PHONY : src/Game/Game.s
 
 # target to generate assembly for a file
-src/Game.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gameengine.dir/build.make CMakeFiles/gameengine.dir/src/Game.cpp.s
-.PHONY : src/Game.cpp.s
+src/Game/Game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gameengine.dir/build.make CMakeFiles/gameengine.dir/src/Game/Game.cpp.s
+.PHONY : src/Game/Game.cpp.s
 
-src/Logger.o: src/Logger.cpp.o
-.PHONY : src/Logger.o
+src/Logger/Logger.o: src/Logger/Logger.cpp.o
+.PHONY : src/Logger/Logger.o
 
 # target to build an object file
-src/Logger.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gameengine.dir/build.make CMakeFiles/gameengine.dir/src/Logger.cpp.o
-.PHONY : src/Logger.cpp.o
+src/Logger/Logger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gameengine.dir/build.make CMakeFiles/gameengine.dir/src/Logger/Logger.cpp.o
+.PHONY : src/Logger/Logger.cpp.o
 
-src/Logger.i: src/Logger.cpp.i
-.PHONY : src/Logger.i
+src/Logger/Logger.i: src/Logger/Logger.cpp.i
+.PHONY : src/Logger/Logger.i
 
 # target to preprocess a source file
-src/Logger.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gameengine.dir/build.make CMakeFiles/gameengine.dir/src/Logger.cpp.i
-.PHONY : src/Logger.cpp.i
+src/Logger/Logger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gameengine.dir/build.make CMakeFiles/gameengine.dir/src/Logger/Logger.cpp.i
+.PHONY : src/Logger/Logger.cpp.i
 
-src/Logger.s: src/Logger.cpp.s
-.PHONY : src/Logger.s
+src/Logger/Logger.s: src/Logger/Logger.cpp.s
+.PHONY : src/Logger/Logger.s
 
 # target to generate assembly for a file
-src/Logger.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gameengine.dir/build.make CMakeFiles/gameengine.dir/src/Logger.cpp.s
-.PHONY : src/Logger.cpp.s
+src/Logger/Logger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gameengine.dir/build.make CMakeFiles/gameengine.dir/src/Logger/Logger.cpp.s
+.PHONY : src/Logger/Logger.cpp.s
 
 src/Main.o: src/Main.cpp.o
 .PHONY : src/Main.o
@@ -211,12 +211,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... gameengine"
-	@echo "... src/Game.o"
-	@echo "... src/Game.i"
-	@echo "... src/Game.s"
-	@echo "... src/Logger.o"
-	@echo "... src/Logger.i"
-	@echo "... src/Logger.s"
+	@echo "... src/Game/Game.o"
+	@echo "... src/Game/Game.i"
+	@echo "... src/Game/Game.s"
+	@echo "... src/Logger/Logger.o"
+	@echo "... src/Logger/Logger.i"
+	@echo "... src/Logger/Logger.s"
 	@echo "... src/Main.o"
 	@echo "... src/Main.i"
 	@echo "... src/Main.s"

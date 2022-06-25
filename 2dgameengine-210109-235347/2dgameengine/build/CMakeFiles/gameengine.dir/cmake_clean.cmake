@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/gameengine.dir/src/Game.cpp.o"
-  "CMakeFiles/gameengine.dir/src/Game.cpp.o.d"
-  "CMakeFiles/gameengine.dir/src/Logger.cpp.o"
-  "CMakeFiles/gameengine.dir/src/Logger.cpp.o.d"
+  "CMakeFiles/gameengine.dir/src/Game/Game.cpp.o"
+  "CMakeFiles/gameengine.dir/src/Game/Game.cpp.o.d"
+  "CMakeFiles/gameengine.dir/src/Logger/Logger.cpp.o"
+  "CMakeFiles/gameengine.dir/src/Logger/Logger.cpp.o.d"
   "CMakeFiles/gameengine.dir/src/Main.cpp.o"
   "CMakeFiles/gameengine.dir/src/Main.cpp.o.d"
   "gameengine"

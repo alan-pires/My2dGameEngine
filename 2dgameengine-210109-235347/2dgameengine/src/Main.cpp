@@ -1,5 +1,6 @@
 #include <iostream>
-#include "Game.h"
+#include "../Game/Game.h"
+#include "../Logger/Logger.h"
 
 using namespace std;
 

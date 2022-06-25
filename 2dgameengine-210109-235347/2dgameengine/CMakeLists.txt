@@ -15,6 +15,8 @@ add_executable(gameengine ${SRC_FILES})
 target_include_directories(gameengine
 PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/libs
+	${CMAKE_CURRENT_SOURCE_DIR}/src/Game
+	${CMAKE_CURRENT_SOURCE_DIR}/src/Logger
 )
 
 target_link_libraries(gameengine
