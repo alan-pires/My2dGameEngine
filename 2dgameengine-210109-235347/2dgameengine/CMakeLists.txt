@@ -12,11 +12,15 @@ file(GLOB_RECURSE SRC_FILES CONFIGURE_DEPENDS
 
 add_executable(gameengine ${SRC_FILES})
 
+target_compile_options(gameengine PRIVATE -Wall)
+target_compile_options(gameengine PRIVATE -Wfatal-errors)
+
 target_include_directories(gameengine
 PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/libs
 	${CMAKE_CURRENT_SOURCE_DIR}/src/Game
 	${CMAKE_CURRENT_SOURCE_DIR}/src/Logger
+	${CMAKE_CURRENT_SOURCE_DIR}/src/ECS
 )
 
 target_link_libraries(gameengine

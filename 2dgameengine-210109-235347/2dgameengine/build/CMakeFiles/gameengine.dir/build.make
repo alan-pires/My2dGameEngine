@@ -69,10 +69,24 @@ include CMakeFiles/gameengine.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/gameengine.dir/flags.make
 
+CMakeFiles/gameengine.dir/src/ECS/ESC.cpp.o: CMakeFiles/gameengine.dir/flags.make
+CMakeFiles/gameengine.dir/src/ECS/ESC.cpp.o: ../src/ECS/ESC.cpp
+CMakeFiles/gameengine.dir/src/ECS/ESC.cpp.o: CMakeFiles/gameengine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/gameengine.dir/src/ECS/ESC.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gameengine.dir/src/ECS/ESC.cpp.o -MF CMakeFiles/gameengine.dir/src/ECS/ESC.cpp.o.d -o CMakeFiles/gameengine.dir/src/ECS/ESC.cpp.o -c /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/ECS/ESC.cpp
+
+CMakeFiles/gameengine.dir/src/ECS/ESC.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gameengine.dir/src/ECS/ESC.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/ECS/ESC.cpp > CMakeFiles/gameengine.dir/src/ECS/ESC.cpp.i
+
+CMakeFiles/gameengine.dir/src/ECS/ESC.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gameengine.dir/src/ECS/ESC.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/ECS/ESC.cpp -o CMakeFiles/gameengine.dir/src/ECS/ESC.cpp.s
+
 CMakeFiles/gameengine.dir/src/Game/Game.cpp.o: CMakeFiles/gameengine.dir/flags.make
 CMakeFiles/gameengine.dir/src/Game/Game.cpp.o: ../src/Game/Game.cpp
 CMakeFiles/gameengine.dir/src/Game/Game.cpp.o: CMakeFiles/gameengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/gameengine.dir/src/Game/Game.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/gameengine.dir/src/Game/Game.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gameengine.dir/src/Game/Game.cpp.o -MF CMakeFiles/gameengine.dir/src/Game/Game.cpp.o.d -o CMakeFiles/gameengine.dir/src/Game/Game.cpp.o -c /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/Game.cpp
 
 CMakeFiles/gameengine.dir/src/Game/Game.cpp.i: cmake_force
@@ -86,7 +100,7 @@ CMakeFiles/gameengine.dir/src/Game/Game.cpp.s: cmake_force
 CMakeFiles/gameengine.dir/src/Logger/Logger.cpp.o: CMakeFiles/gameengine.dir/flags.make
 CMakeFiles/gameengine.dir/src/Logger/Logger.cpp.o: ../src/Logger/Logger.cpp
 CMakeFiles/gameengine.dir/src/Logger/Logger.cpp.o: CMakeFiles/gameengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/gameengine.dir/src/Logger/Logger.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/gameengine.dir/src/Logger/Logger.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gameengine.dir/src/Logger/Logger.cpp.o -MF CMakeFiles/gameengine.dir/src/Logger/Logger.cpp.o.d -o CMakeFiles/gameengine.dir/src/Logger/Logger.cpp.o -c /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Logger/Logger.cpp
 
 CMakeFiles/gameengine.dir/src/Logger/Logger.cpp.i: cmake_force
@@ -100,7 +114,7 @@ CMakeFiles/gameengine.dir/src/Logger/Logger.cpp.s: cmake_force
 CMakeFiles/gameengine.dir/src/Main.cpp.o: CMakeFiles/gameengine.dir/flags.make
 CMakeFiles/gameengine.dir/src/Main.cpp.o: ../src/Main.cpp
 CMakeFiles/gameengine.dir/src/Main.cpp.o: CMakeFiles/gameengine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/gameengine.dir/src/Main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/gameengine.dir/src/Main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gameengine.dir/src/Main.cpp.o -MF CMakeFiles/gameengine.dir/src/Main.cpp.o.d -o CMakeFiles/gameengine.dir/src/Main.cpp.o -c /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Main.cpp
 
 CMakeFiles/gameengine.dir/src/Main.cpp.i: cmake_force
@@ -113,6 +127,7 @@ CMakeFiles/gameengine.dir/src/Main.cpp.s: cmake_force
 
 # Object files for target gameengine
 gameengine_OBJECTS = \
+"CMakeFiles/gameengine.dir/src/ECS/ESC.cpp.o" \
 "CMakeFiles/gameengine.dir/src/Game/Game.cpp.o" \
 "CMakeFiles/gameengine.dir/src/Logger/Logger.cpp.o" \
 "CMakeFiles/gameengine.dir/src/Main.cpp.o"
@@ -120,12 +135,13 @@ gameengine_OBJECTS = \
 # External object files for target gameengine
 gameengine_EXTERNAL_OBJECTS =
 
+gameengine: CMakeFiles/gameengine.dir/src/ECS/ESC.cpp.o
 gameengine: CMakeFiles/gameengine.dir/src/Game/Game.cpp.o
 gameengine: CMakeFiles/gameengine.dir/src/Logger/Logger.cpp.o
 gameengine: CMakeFiles/gameengine.dir/src/Main.cpp.o
 gameengine: CMakeFiles/gameengine.dir/build.make
 gameengine: CMakeFiles/gameengine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable gameengine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable gameengine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gameengine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

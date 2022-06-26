@@ -457,4 +457,5 @@ CMakeFiles/gameengine.dir/src/Game/Game.cpp.o: \
  /usr/include/c++/9/pstl/glue_algorithm_defs.h /usr/include/c++/9/sstream \
  /usr/include/c++/9/bits/sstream.tcc \
  /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Logger/Logger.h \
- /usr/include/c++/9/chrono /usr/include/c++/9/ratio
+ /usr/include/c++/9/chrono /usr/include/c++/9/ratio \
+ /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../ECS/ECS.h

@@ -1,6 +1,7 @@
 #include "Game.h"
 #include "Logger.h"
 #include <iostream>
+#include "../ECS/ECS.h"
 
 // Global Variables
 glm::vec2 playerPos;
@@ -88,8 +89,12 @@ void	Game::ProcessInput()
 
 void	Game::Setup()
 {
-	playerPos = glm::vec2(10.0, 20.0);
-	playerVeloc = glm::vec2(50.0, 0.0);
+	// Entity tank = registry.CreateEntity();
+	// tank.AddComponent<TransformComponent>();
+	// tank.AddComponent<BoxColliderComponent>();
+
+	// playerPos = glm::vec2(10.0, 20.0);
+	// playerVeloc = glm::vec2(50.0, 0.0);
 }
 
 void	Game::Update()
@@ -111,12 +116,12 @@ void	Game::Render()
 {
 	SDL_SetRenderDrawColor(renderer, 21, 21, 21, 255);
 	SDL_RenderClear(renderer);
-	SDL_Surface *surface = IMG_Load("../assets/images/tank-tiger-right.png");
-	SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, surface);
-	SDL_FreeSurface(surface);
-	SDL_Rect destRect = {static_cast<int>(playerPos.x), static_cast<int>(playerPos.y), 32, 32};
-	SDL_RenderCopy(renderer, texture, NULL, &destRect);
-	SDL_DestroyTexture(texture);
+	// SDL_Surface *surface = IMG_Load("../assets/images/tank-tiger-right.png");
+	// SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, surface);
+	// SDL_FreeSurface(surface);
+	// SDL_Rect destRect = {static_cast<int>(playerPos.x), static_cast<int>(playerPos.y), 32, 32};
+	// SDL_RenderCopy(renderer, texture, NULL, &destRect);
+	// SDL_DestroyTexture(texture);
 	SDL_RenderPresent(renderer);
 }
 

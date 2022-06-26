@@ -81,12 +81,12 @@ clean: CMakeFiles/gameengine.dir/clean
 CMakeFiles/gameengine.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gameengine.dir/build.make CMakeFiles/gameengine.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gameengine.dir/build.make CMakeFiles/gameengine.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/build/CMakeFiles --progress-num=1,2,3,4 "Built target gameengine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target gameengine"
 .PHONY : CMakeFiles/gameengine.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/gameengine.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/gameengine.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/build/CMakeFiles 0
 .PHONY : CMakeFiles/gameengine.dir/rule

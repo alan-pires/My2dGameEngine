@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/gameengine.dir/src/ECS/ESC.cpp.o"
+  "CMakeFiles/gameengine.dir/src/ECS/ESC.cpp.o.d"
   "CMakeFiles/gameengine.dir/src/Game/Game.cpp.o"
   "CMakeFiles/gameengine.dir/src/Game/Game.cpp.o.d"
   "CMakeFiles/gameengine.dir/src/Logger/Logger.cpp.o"
