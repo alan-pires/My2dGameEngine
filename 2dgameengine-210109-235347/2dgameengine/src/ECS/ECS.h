@@ -22,7 +22,7 @@ struct IComponent
 {
 	protected:
 		static int nextId;
-}
+};
 
 // used to assign a unique id to a component type
 template <typename T>
