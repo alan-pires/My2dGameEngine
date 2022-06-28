@@ -1,4 +1,7 @@
 #include "ECS.h"
+#include "../Logger/Logger.h"
+
+int IComponent::nextId = 0;
 
 int Entity::GetId() const
 {
@@ -27,4 +30,18 @@ std::vector<Entity> System::GetSystemEntities() const
 const Signature& System::GetComponetSignature() const
 {
 	return componentSignature;
+}
+
+Entity Registry::CreateEntity()
+{
+	int entityId = numEntities++;
+	Entity entity(entityId);
+	entitiesToBeAdded.insert(entity);
+	Logger::Log("Entity created whit id " + std::to_string(entityId));
+	return entity;
+}
+
+void Registry::Update()
+{
+
 }
