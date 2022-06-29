@@ -8,6 +8,7 @@
 #include <glm/glm.hpp>
 #include <imgui/imgui.h>
 #include <sol/sol.hpp>
+#include "../ECS/ECS.h"
 
 const int FPS = 30;
 const int MILLISECS_PER_FRAME = 1000/FPS;
@@ -19,6 +20,7 @@ class Game
 		SDL_Renderer *renderer;
 		bool isRunning;
 		int millisecsPreviousFrame = 0;
+		Registry* registry;
 
 	public:
 		Game();

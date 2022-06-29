@@ -10,6 +10,7 @@ glm::vec2 playerVeloc;
 Game::Game()
 {
 	isRunning = false;
+	registry = new Registry();
 	Logger::Log("Game Constructor Called");
 }
 
@@ -95,6 +96,7 @@ void	Game::Setup()
 
 	// playerPos = glm::vec2(10.0, 20.0);
 	// playerVeloc = glm::vec2(50.0, 0.0);
+	Entity tank = registry->CreateEntity();
 }
 
 void	Game::Update()

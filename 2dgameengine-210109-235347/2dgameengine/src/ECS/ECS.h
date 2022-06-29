@@ -6,6 +6,8 @@
 #include <unordered_map>
 #include <typeindex>
 #include <set>
+#include <memory>
+#include <algorithm>
 
 const unsigned int MAX_COMPONENTS = 32;
 typedef std::bitset<MAX_COMPONENTS> Signature;
@@ -19,6 +21,12 @@ class Entity
 	public:
 		Entity(int id): id(id){};
 		int GetId() const;
+		
+		Entity(const Entity& entity) = default;
+		bool operator ==(const Entity& other) const { return id == other.id; }
+        bool operator !=(const Entity& other) const { return id != other.id; }
+        bool operator >(const Entity& other) const { return id > other.id; }
+        bool operator <(const Entity& other) const { return id < other.id; }
 };
 
 // ============================== COMPONENT CLASSES ====================================
@@ -36,8 +44,7 @@ class Component: public IComponent
 	//returns the unique id of the component<T>
 	static int GetId()
 	{
-		static auto id;
-		id = nextId++;
+		static auto id = nextId++;
 		return id;
 	}
 };
@@ -112,7 +119,7 @@ class Pool: public IPool{
 
 		T& Get(int index)
 		{
-			return static_cast<T&>{data[index]};
+			return static_cast<T&>(data[index]);
 		}
 
 		T& operator [](unsigned int index)
@@ -163,7 +170,7 @@ template <typename TComponent>
 void System::RequireComponent()
 {
 	const auto componentId = Component<TComponent>::GetId();
-	componentSignature.set(componetId);
+	componentSignature.set(componentId);
 }
 
 template <typename TComponent, typename ...TArgs>
@@ -185,7 +192,7 @@ void Registry::AddComponent(Entity entity, TArgs&& ...args)
 
 	Pool<TComponent>* currentComponentPool = componentPools[componentId];
 
-	if (entityId >= currentComponenetPool->GetSize())
+	if (entityId >= currentComponentPool->GetSize())
 	{
 		currentComponentPool->Resize(numEntities);
 	}
