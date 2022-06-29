@@ -36,7 +36,8 @@ class Component: public IComponent
 	//returns the unique id of the component<T>
 	static int GetId()
 	{
-		static auto id = nextId++;
+		static auto id;
+		id = nextId++;
 		return id;
 	}
 };
@@ -131,23 +132,33 @@ class Registry
 		// Pool index = entity id
 		std::vector<IPool*> componentPools;
 		std::vector<Signature> entityComponentSignatures;
-		std::unordered_map<std::type_index, System*> Systems;
+		std::unordered_map<std::type_index, System*> systems;
 		std::set<Entity> entitiesToBeAdded;
 		std::set<Entity> entitiesToBeKilled;
 
 	public:
 		Registry() = default;
 
-		Entity CreateEntity();
 		void Update();
+		//Entity Management
+		Entity CreateEntity();
+		//Componenent Management
 		void AddEntityToSystem(Entity entity);
 		template <typename TComponent, typename ...TArgs> void AddComponent(Entity entity, TArgs&& ...args);
 		template <typename TComponent> void RemoveComponent(Entity entity);
 		template <typename TComponent> bool HasComponent(Entity entity) const;
+		//System Management
+		template <typename TSystem, typename ...TArgs> void AddSystem(TArgs&& ...args);
+		template <typename TSystem> void RemoveSystem();
+		template <typename TSystem> bool HasSystem() const;
+		template <typename TSystem> TSystem& GetSystem() const;
+		// Checks the component signature of an entity and add the entity to the systems that are interested in it
+		void AddEntityToSystems(Entity entity);
 };
 
 // ======================== TEMPLATE FUNCTIONS ==============================
 
+// COMPONENT TEMPLATE FUNCTIONS
 template <typename TComponent>
 void System::RequireComponent()
 {
@@ -200,6 +211,36 @@ bool Registry::HasComponent(Entity entity) const
 	const auto entityId = entity.GetId();
 
 	return entityComponentSignatures[entityId].test(componentId);
+}
+
+// TEMPLATE SYSTEM FUNCTIONS
+
+// Creates a new System Object and adds it to the unordered map Systems
+template <typename TSystem, typename ...TArgs>
+void Registry::AddSystem(TArgs&& ...args)
+{
+	TSystem* newSystem(new TSystem(std::forward<TArgs>(args)...));
+	systems.insert(std::make_pair(std::type_index(typeid(TSystem)), newSystem));
+}
+
+template <typename TSystem>
+void Registry::RemoveSystem()
+{
+	auto system = systems.find(std::type_index(typeid(TSystem)));
+	systems.erase(system);
+}
+
+template <typename TSystem>
+bool Registry::HasSystem() const
+{
+	return systems.find(std::type_index(typeid(TSystem))) != systems.end();
+}
+
+template <typename TSystem>
+TSystem& Registry::GetSystem() const
+{
+	auto system = systems.find(std::type_index(typeid(TSystem)));
+	return *(std::static_pointer_cast<TSystem>(system->second));
 }
 
 #endif
