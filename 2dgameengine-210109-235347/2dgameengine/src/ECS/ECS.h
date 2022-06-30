@@ -31,9 +31,8 @@ class Entity
 
 		template <typename TComponent, typename ...TArgs> void AddComponent(TArgs&& ...args);
 		template <typename TComponent> void RemoveComponent();
-		template <typename TComponent> void HasComponent() const;
+		template <typename TComponent> bool HasComponent() const;
 		template <typename TComponent> TComponent& GetComponent() const;
-
 		class Registry* registry;
 };
 
@@ -153,8 +152,8 @@ class Registry
 
 	public:
 		Registry() = default;
-
 		void Update();
+
 		//Entity Management
 		Entity CreateEntity();
 
@@ -199,20 +198,14 @@ void Registry::AddComponent(Entity entity, TArgs&& ...args)
 		std::shared_ptr<Pool<TComponent>> newComponentPool = std::make_shared<Pool<TComponent>>();
 		componentPools[componentId] = newComponentPool;
 	}
-
 	std::shared_ptr<Pool<TComponent>> currentComponentPool = std::static_pointer_cast<Pool<TComponent>>(componentPools[componentId]);
 
 	if (entityId >= currentComponentPool->GetSize())
-	{
 		currentComponentPool->Resize(numEntities);
-	}
-
 	TComponent newComponent(std::forward<TArgs>(args)...);
 	currentComponentPool->Set(entityId, newComponent);
 	entityComponentSignatures[entityId].set(componentId);
-
 	Logger::Log("Component ID: " + std::to_string(componentId) + " was added to the Entity ID: " + std::to_string(entityId));
-
 }
 
 template <typename TComponent>
@@ -220,8 +213,8 @@ void Registry::RemoveComponent(Entity entity)
 {
 	const auto componentId = Component<TComponent>::GetId();
 	const auto entityId = entity.GetId();
-
 	entityComponentSignatures[entityId].set(componentId, false);
+	Logger::Log("Component ID: " + std::to_string(componentId) + " was removed from the Entity ID: " + std::to_string(entityId));
 }
 
 template <typename TComponent>
@@ -229,7 +222,6 @@ bool Registry::HasComponent(Entity entity) const
 {
 	const auto componentId = Component<TComponent>::GetId();
 	const auto entityId = entity.GetId();
-
 	return entityComponentSignatures[entityId].test(componentId);
 }
 
@@ -275,27 +267,27 @@ TSystem& Registry::GetSystem() const
 // ======================== TEMPLATE ENTITY FUNCTIONS ========================
 
 template <typename TComponent, typename ...TArgs> 
-void Entity::AddComponent(Entity entity, TArgs&& ...args)
+void Entity::AddComponent(TArgs&& ...args)
 {
-
+	registry->AddComponent<TComponent>(*this, std::forward<TArgs>(args)...);
 }
 
 template <typename TComponent> 
-void Entity::RemoveComponent(Entity entity)
+void Entity::RemoveComponent()
 {
-
+	registry->RemoveComponent<TComponent>(*this);
 }
 
 template <typename TComponent>
-bool Entity::HasComponent(Entity entity) const
+bool Entity::HasComponent() const
 {
-
+	return registry->HasComponent<TComponent>(*this);
 }
 
 template <typename TComponent>
-TComponent& Entity::GetComponent(Entity entity) const
+TComponent& Entity::GetComponent() const
 {
-
+	return registry->GetComponent<TComponent>(*this);
 }
 
 #endif
