@@ -465,7 +465,10 @@ CMakeFiles/gameengine.dir/src/Game/Game.cpp.o: \
  /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Logger/Logger.h \
  /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Components/TransformComponent.h \
  /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Components/RigidBodyComponent.h \
+ /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Components/SpriteComponent.h \
  /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Systems/MovementSystem.h \
  /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Systems/../ECS/ECS.h \
  /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Systems/../Components/TransformComponent.h \
- /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Systems/../Components/RigidBodyComponent.h
+ /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Systems/../Components/RigidBodyComponent.h \
+ /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Systems/RenderSystem.h \
+ /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Systems/../Components/SpriteComponent.h

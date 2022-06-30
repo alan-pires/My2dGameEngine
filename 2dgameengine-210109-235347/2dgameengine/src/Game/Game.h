@@ -13,7 +13,9 @@
 #include "../Logger/Logger.h"
 #include "../Components/TransformComponent.h"
 #include "../Components/RigidBodyComponent.h"
+#include "../Components/SpriteComponent.h"
 #include "../Systems/MovementSystem.h"
+#include "../Systems/RenderSystem.h"
 
 const int FPS = 30;
 const int MILLISECS_PER_FRAME = 1000/FPS;

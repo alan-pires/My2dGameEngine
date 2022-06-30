@@ -89,10 +89,12 @@ void	Game::Setup()
 {
 	// Add the systems that need to be processed in our game
 	registry->AddSystem<MovementSystem>();
+	registry->AddSystem<RenderSystem>();
 
 	Entity tank = registry->CreateEntity();
 	tank.AddComponent<TransformComponent>(glm::vec2(10.0, 30.0), glm::vec2(1.0, 1.0), 0.0);
 	tank.AddComponent<RigidBodyComponent>(glm::vec2(50.0, 0.0));
+	tank.AddComponent<SpriteComponent>(10, 10);
 }
 
 void	Game::Update()
@@ -116,12 +118,9 @@ void	Game::Render()
 {
 	SDL_SetRenderDrawColor(renderer, 21, 21, 21, 255);
 	SDL_RenderClear(renderer);
-	// SDL_Surface *surface = IMG_Load("../assets/images/tank-tiger-right.png");
-	// SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, surface);
-	// SDL_FreeSurface(surface);
-	// SDL_Rect destRect = {static_cast<int>(playerPos.x), static_cast<int>(playerPos.y), 32, 32};
-	// SDL_RenderCopy(renderer, texture, NULL, &destRect);
-	// SDL_DestroyTexture(texture);
+
+	// Invoke all the sysems that need to render
+	registry->GetSystem<RenderSystem>().Update(renderer);
 	SDL_RenderPresent(renderer);
 }
 
