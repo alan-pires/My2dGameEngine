@@ -790,6 +790,10 @@ CMakeFiles/gameengine.dir/src/Game/Game.cpp.o: ../src/Game/Game.cpp \
   /usr/include/c++/9/ratio \
   ../src/Logger/Logger.h \
   ../src/Components/TransformComponent.h \
+  ../src/Components/RigidBodyComponent.h \
+  ../src/Systems/MovementSystem.h \
+  ../src/ECS/ECS.h \
+  ../src/Components/TransformComponent.h \
   ../src/Components/RigidBodyComponent.h
 
 CMakeFiles/gameengine.dir/src/Logger/Logger.cpp.o: ../src/Logger/Logger.cpp \
@@ -1539,10 +1543,16 @@ CMakeFiles/gameengine.dir/src/Main.cpp.o: ../src/Main.cpp \
   ../src/Logger/Logger.h \
   ../src/Components/TransformComponent.h \
   ../src/Components/RigidBodyComponent.h \
+  ../src/Systems/MovementSystem.h \
+  ../src/ECS/ECS.h \
+  ../src/Components/TransformComponent.h \
+  ../src/Components/RigidBodyComponent.h \
   ../src/Logger/Logger.h
 
 
 ../src/Logger/Logger.cpp:
+
+../src/Systems/MovementSystem.h:
 
 ../src/Components/TransformComponent.h:
 

@@ -87,10 +87,12 @@ void	Game::ProcessInput()
 
 void	Game::Setup()
 {
+	// Add the systems that need to be processed in our game
+	registry->AddSystem<MovementSystem>();
+
 	Entity tank = registry->CreateEntity();
 	tank.AddComponent<TransformComponent>(glm::vec2(10.0, 30.0), glm::vec2(1.0, 1.0), 0.0);
 	tank.AddComponent<RigidBodyComponent>(glm::vec2(50.0, 0.0));
-	tank.RemoveComponent<TransformComponent>();
 }
 
 void	Game::Update()
@@ -98,14 +100,16 @@ void	Game::Update()
 	int timeToWait = MILLISECS_PER_FRAME - (SDL_GetTicks() - millisecsPreviousFrame);
 	if (timeToWait > 0 && timeToWait <= MILLISECS_PER_FRAME)
 		SDL_Delay(timeToWait);
-
 	double deltaT = (SDL_GetTicks() - millisecsPreviousFrame) / 1000.0;
 
 	// stores the "previous" frame time (ticks after the SDL_Delay)
 	millisecsPreviousFrame = SDL_GetTicks();
 
-	playerPos.x += playerVeloc.x * deltaT;
-	playerPos.y += playerVeloc.y * deltaT;
+	//Ask all the systems to update
+	registry->GetSystem<MovementSystem>().Update(deltaT);
+
+	//Update the registry to process the entities that are waiting to be created/killed
+	registry->Update();
 }
 
 void	Game::Render()
