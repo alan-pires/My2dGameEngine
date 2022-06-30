@@ -1,7 +1,4 @@
 #include "Game.h"
-#include "Logger.h"
-#include <iostream>
-#include "../ECS/ECS.h"
 
 // Global Variables
 glm::vec2 playerPos;
@@ -10,7 +7,7 @@ glm::vec2 playerVeloc;
 Game::Game()
 {
 	isRunning = false;
-	registry = new Registry();
+	registry = std::make_unique<Registry>();
 	Logger::Log("Game Constructor Called");
 }
 
@@ -90,13 +87,11 @@ void	Game::ProcessInput()
 
 void	Game::Setup()
 {
-	// Entity tank = registry.CreateEntity();
-	// tank.AddComponent<TransformComponent>();
-	// tank.AddComponent<BoxColliderComponent>();
-
-	// playerPos = glm::vec2(10.0, 20.0);
-	// playerVeloc = glm::vec2(50.0, 0.0);
 	Entity tank = registry->CreateEntity();
+
+	registry->AddComponent<TransformComponent>(tank, glm::vec2(10.0, 30.0), glm::vec2(1.0, 1.0), 0.0);
+	registry->AddComponent<RigidBodyComponent>(tank, glm::vec2(50.0, 0.0));
+
 }
 
 void	Game::Update()

@@ -1,6 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
 
+#include <iostream>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_ttf.h>
@@ -9,6 +10,9 @@
 #include <imgui/imgui.h>
 #include <sol/sol.hpp>
 #include "../ECS/ECS.h"
+#include "../Logger/Logger.h"
+#include "../Components/TransformComponent.h"
+#include "../Components/RigidBodyComponent.h"
 
 const int FPS = 30;
 const int MILLISECS_PER_FRAME = 1000/FPS;
@@ -20,7 +24,7 @@ class Game
 		SDL_Renderer *renderer;
 		bool isRunning;
 		int millisecsPreviousFrame = 0;
-		Registry* registry;
+		std::unique_ptr<Registry> registry;
 
 	public:
 		Game();

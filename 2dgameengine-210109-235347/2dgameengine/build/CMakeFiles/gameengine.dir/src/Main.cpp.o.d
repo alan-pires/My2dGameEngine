@@ -459,5 +459,9 @@ CMakeFiles/gameengine.dir/src/Main.cpp.o: \
  /usr/include/c++/9/typeindex /usr/include/c++/9/set \
  /usr/include/c++/9/bits/stl_tree.h /usr/include/c++/9/bits/stl_set.h \
  /usr/include/c++/9/bits/stl_multiset.h \
- /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Logger/Logger.h \
- /usr/include/c++/9/chrono /usr/include/c++/9/ratio
+ /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Game/../ECS/../Logger/Logger.h \
+ /usr/include/c++/9/chrono /usr/include/c++/9/ratio \
+ /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Game/../Logger/Logger.h \
+ /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Game/../Components/TransformComponent.h \
+ /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Game/../Components/RigidBodyComponent.h \
+ /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Logger/Logger.h
