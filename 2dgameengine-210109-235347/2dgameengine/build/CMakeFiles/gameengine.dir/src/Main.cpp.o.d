@@ -471,4 +471,9 @@ CMakeFiles/gameengine.dir/src/Main.cpp.o: \
  /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Game/../Systems/../Components/RigidBodyComponent.h \
  /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Game/../Systems/RenderSystem.h \
  /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Game/../Systems/../Components/SpriteComponent.h \
+ /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Game/../Systems/../AssetManager/AssetManager.h \
+ /usr/include/c++/9/map /usr/include/c++/9/bits/stl_map.h \
+ /usr/include/c++/9/bits/stl_multimap.h \
+ /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Game/../Systems/../AssetManager/../Logger/Logger.h \
+ /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Game/../AssetManager/AssetManager.h \
  /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Logger/Logger.h

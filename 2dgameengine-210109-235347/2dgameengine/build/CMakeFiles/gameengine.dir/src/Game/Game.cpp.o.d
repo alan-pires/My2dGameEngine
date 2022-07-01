@@ -471,4 +471,9 @@ CMakeFiles/gameengine.dir/src/Game/Game.cpp.o: \
  /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Systems/../Components/TransformComponent.h \
  /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Systems/../Components/RigidBodyComponent.h \
  /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Systems/RenderSystem.h \
- /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Systems/../Components/SpriteComponent.h
+ /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Systems/../Components/SpriteComponent.h \
+ /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Systems/../AssetManager/AssetManager.h \
+ /usr/include/c++/9/map /usr/include/c++/9/bits/stl_map.h \
+ /usr/include/c++/9/bits/stl_multimap.h \
+ /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Systems/../AssetManager/../Logger/Logger.h \
+ /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../AssetManager/AssetManager.h

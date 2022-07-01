@@ -21,6 +21,7 @@ PRIVATE
 	${CMAKE_CURRENT_SOURCE_DIR}/src/Game
 	${CMAKE_CURRENT_SOURCE_DIR}/src/Logger
 	${CMAKE_CURRENT_SOURCE_DIR}/src/ECS
+	${CMAKE_CURRENT_SOURCE_DIR}/src/AssetManager
 )
 
 target_link_libraries(gameengine

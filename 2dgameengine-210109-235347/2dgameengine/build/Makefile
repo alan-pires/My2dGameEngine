@@ -130,6 +130,30 @@ gameengine/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gameengine.dir/build.make CMakeFiles/gameengine.dir/build
 .PHONY : gameengine/fast
 
+src/AssetManager/AssetManager.o: src/AssetManager/AssetManager.cpp.o
+.PHONY : src/AssetManager/AssetManager.o
+
+# target to build an object file
+src/AssetManager/AssetManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gameengine.dir/build.make CMakeFiles/gameengine.dir/src/AssetManager/AssetManager.cpp.o
+.PHONY : src/AssetManager/AssetManager.cpp.o
+
+src/AssetManager/AssetManager.i: src/AssetManager/AssetManager.cpp.i
+.PHONY : src/AssetManager/AssetManager.i
+
+# target to preprocess a source file
+src/AssetManager/AssetManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gameengine.dir/build.make CMakeFiles/gameengine.dir/src/AssetManager/AssetManager.cpp.i
+.PHONY : src/AssetManager/AssetManager.cpp.i
+
+src/AssetManager/AssetManager.s: src/AssetManager/AssetManager.cpp.s
+.PHONY : src/AssetManager/AssetManager.s
+
+# target to generate assembly for a file
+src/AssetManager/AssetManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gameengine.dir/build.make CMakeFiles/gameengine.dir/src/AssetManager/AssetManager.cpp.s
+.PHONY : src/AssetManager/AssetManager.cpp.s
+
 src/ECS/ESC.o: src/ECS/ESC.cpp.o
 .PHONY : src/ECS/ESC.o
 
@@ -235,6 +259,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... gameengine"
+	@echo "... src/AssetManager/AssetManager.o"
+	@echo "... src/AssetManager/AssetManager.i"
+	@echo "... src/AssetManager/AssetManager.s"
 	@echo "... src/ECS/ESC.o"
 	@echo "... src/ECS/ESC.i"
 	@echo "... src/ECS/ESC.s"

@@ -5,6 +5,7 @@
 #include "../Components/TransformComponent.h"
 #include "../Components/SpriteComponent.h"
 #include <SDL2/SDL.h>
+#include "../AssetManager/AssetManager.h"
 
 class RenderSystem : public System
 {
@@ -14,23 +15,33 @@ class RenderSystem : public System
 			RequireComponent<TransformComponent>();
 			RequireComponent<SpriteComponent>();
 		}
-		~RenderSystem() = default;
 
-		void Update(SDL_Renderer *renderer)
+		void Update(SDL_Renderer *renderer, std::unique_ptr<AssetManager>& assetManager)
 		{
-			for (auto entity : GetSystemEntities())
+			for (auto entity: GetSystemEntities())
 			{
 				const auto transform = entity.GetComponent<TransformComponent>();
 				const auto sprite = entity.GetComponent<SpriteComponent>();
-				
-				SDL_Rect objRect = {
+		
+				//Set the source rectangle of our original sprite textures
+				SDL_Rect srcRect = sprite.srcRect;
+				// Set the destination rectangle with the x, y position to be rendered
+				SDL_Rect dstRect = {
 					static_cast<int>(transform.position.x),
 					static_cast<int>(transform.position.y),
-					sprite.width,
-					sprite.height
+					static_cast<int>(sprite.width * transform.scale.x),
+					static_cast<int>(sprite.height * transform.scale.y)
 				};
-				SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-				SDL_RenderFillRect(renderer, &objRect);
+
+				SDL_RenderCopyEx(
+					renderer,
+					assetManager->GetTexture(sprite.assetId),
+					&srcRect,
+					&dstRect,
+					transform.rotation,
+					NULL,
+					SDL_FLIP_NONE
+				);
 			}
 		}
 };

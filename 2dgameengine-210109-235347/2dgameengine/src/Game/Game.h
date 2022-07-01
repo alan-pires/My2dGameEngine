@@ -16,6 +16,7 @@
 #include "../Components/SpriteComponent.h"
 #include "../Systems/MovementSystem.h"
 #include "../Systems/RenderSystem.h"
+#include "../AssetManager/AssetManager.h"
 
 const int FPS = 30;
 const int MILLISECS_PER_FRAME = 1000/FPS;
@@ -28,6 +29,7 @@ class Game
 		bool isRunning;
 		int millisecsPreviousFrame = 0;
 		std::unique_ptr<Registry> registry;
+		std::unique_ptr<AssetManager> assetManager;
 
 	public:
 		Game();
