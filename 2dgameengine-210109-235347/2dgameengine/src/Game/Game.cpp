@@ -1,9 +1,5 @@
 #include "Game.h"
 
-// Global Variables
-glm::vec2 playerPos;
-glm::vec2 playerVeloc;
-
 Game::Game()
 {
 	isRunning = false;
@@ -43,7 +39,6 @@ void	Game::Initialize()
 		Logger::Err("Error creating SDL Window");
 		return;
 	}
-
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 	if (!renderer)
 	{
@@ -51,7 +46,6 @@ void	Game::Initialize()
 		return;
 	}
 	// SDL_SetWindowFullscreen(window, SDL_WINDOW_FULLSCREEN);
-
 	isRunning = true;
 }
 
@@ -92,7 +86,7 @@ void	Game::Setup()
 	registry->AddSystem<MovementSystem>();
 	registry->AddSystem<RenderSystem>();
 
-    assetManager->AddTexture(renderer, "tank-image", "./assets/images/tank-panther-right.png");
+    assetManager->AddTexture(renderer, "tank-image", "../assets/images/tank-panther-right.png");
     // assetManager->AddTexture(renderer, "truck-image", "./assets/images/truck-ford-right.png");
 
 	Entity tank = registry->CreateEntity();
