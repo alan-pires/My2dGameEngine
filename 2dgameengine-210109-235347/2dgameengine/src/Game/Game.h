@@ -17,6 +17,8 @@
 #include "../Systems/MovementSystem.h"
 #include "../Systems/RenderSystem.h"
 #include "../AssetManager/AssetManager.h"
+#include <fstream>
+
 
 const int FPS = 30;
 const int MILLISECS_PER_FRAME = 1000/FPS;
@@ -41,6 +43,7 @@ class Game
 		void	Render();
 		void	Destroy();
 		void	Setup();
+		void	LoadLevel(int level);
 
 		uint windowWidth;
 		uint windowHeight;

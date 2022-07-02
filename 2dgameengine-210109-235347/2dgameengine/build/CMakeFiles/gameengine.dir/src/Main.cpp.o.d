@@ -476,4 +476,8 @@ CMakeFiles/gameengine.dir/src/Main.cpp.o: \
  /usr/include/c++/9/bits/stl_multimap.h \
  /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Game/../Systems/../AssetManager/../Logger/Logger.h \
  /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Game/../AssetManager/AssetManager.h \
+ /usr/include/c++/9/fstream \
+ /usr/include/x86_64-linux-gnu/c++/9/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/9/bits/c++io.h \
+ /usr/include/c++/9/bits/fstream.tcc \
  /home/alan/galaxia42/projetos_galaxia/2dgameengine/2dgameengine-210109-235347/2dgameengine/src/Game/../Logger/Logger.h

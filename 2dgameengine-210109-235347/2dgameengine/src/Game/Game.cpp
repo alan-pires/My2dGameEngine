@@ -80,19 +80,105 @@ void	Game::ProcessInput()
 	}
 }
 
+// void	Game::LoadLevel(int level)
+// {
+// // Add the systems that need to be processed in our game
+// 	registry->AddSystem<MovementSystem>();
+// 	registry->AddSystem<RenderSystem>();
+
+// 	assetManager->AddTexture(renderer, "tank-image", "../assets/images/tank-panther-right.png");
+//     assetManager->AddTexture(renderer, "jungle", "../assets/tilemaps/jungle.png");
+
+// 	int tileSize = 32;
+// 	double tileScale = 1.0;
+// 	int assetWidth;
+// 	int assetHeight;
+// 	int mapNumCols;
+// 	int mapNumRows;
+
+// 	SDL_QueryTexture(assetManager->GetTexture("jungle"), NULL, NULL, &assetWidth, &assetHeight);
+// 	mapNumCols = assetWidth / tileSize;
+// 	mapNumRows = assetHeight / tileSize;
+
+// 	std::fstream mapFile;
+// 	mapFile.open("../assets/tilemaps/jungle.map");
+
+// 	for (int y = 0; y < 25; y++)
+// 	{
+// 		for (int x = 0; x < 32; x++)
+// 		{
+// 			char ch;
+// 			mapFile.get(ch);
+// 			int srcRectY = std::atoi(&ch) * tileSize;
+// 			mapFile.get(ch);
+// 			int srcRectX = std::atoi(&ch) * tileSize;
+// 			mapFile.ignore();
+// 			Entity tile = registry->CreateEntity();
+// 			tile.AddComponent<TransformComponent>(glm::vec2(x * (tileScale * tileSize), y * (tileScale * tileSize)), glm::vec2(tileScale, tileScale), 0.0);
+// 			tile.AddComponent<SpriteComponent>("jungle", tileSize, tileSize, srcRectX, srcRectY);
+// 		}
+// 	}
+// 	mapFile.close();
+
+// 	Entity tank = registry->CreateEntity();
+// 	tank.AddComponent<TransformComponent>(glm::vec2(10.0, 10.0), glm::vec2(1.0, 1.0), 0.0);
+// 	tank.AddComponent<SpriteComponent>("tank-image", 32, 32);
+// 	tank.AddComponent<RigidBodyComponent>(glm::vec2(40.0, 0.0));
+
+// }
+
+
+void Game::LoadLevel(int level) {
+    // Add the sytems that need to be processed in our game
+    registry->AddSystem<MovementSystem>();
+    registry->AddSystem<RenderSystem>();
+
+    // Adding assets to the asset store
+    assetManager->AddTexture(renderer, "tank-image", "../assets/images/tank-panther-right.png");
+    assetManager->AddTexture(renderer, "truck-image", "../assets/images/truck-ford-right.png");
+    assetManager->AddTexture(renderer, "tilemap-image", "../assets/tilemaps/jungle.png");
+
+    // Load the tilemap
+    int tileSize = 32;
+    double tileScale = 1.0;
+    int mapNumCols = 25;
+    int mapNumRows = 20;
+
+    std::fstream mapFile;
+    mapFile.open("../assets/tilemaps/jungle.map");
+
+    for (int y = 0; y < mapNumRows; y++) {
+        for (int x = 0; x < mapNumCols; x++) {
+            char ch;
+            mapFile.get(ch);
+            int srcRectY = std::atoi(&ch) * tileSize;
+            mapFile.get(ch);
+            int srcRectX = std::atoi(&ch) * tileSize;
+            mapFile.ignore();
+
+            Entity tile = registry->CreateEntity();
+            tile.AddComponent<TransformComponent>(glm::vec2(x * (tileScale * tileSize), y * (tileScale * tileSize)), glm::vec2(tileScale, tileScale), 0.0);
+            tile.AddComponent<SpriteComponent>("tilemap-image", tileSize, tileSize, srcRectX, srcRectY);
+        }
+    }
+    mapFile.close();
+
+    // Create an entity
+    Entity tank = registry->CreateEntity();
+    tank.AddComponent<TransformComponent>(glm::vec2(10.0, 10.0), glm::vec2(1.0, 1.0), 0.0);
+    tank.AddComponent<RigidBodyComponent>(glm::vec2(40.0, 0.0));
+    tank.AddComponent<SpriteComponent>("tank-image", 32, 32);
+
+    Entity truck = registry->CreateEntity();
+    truck.AddComponent<TransformComponent>(glm::vec2(50.0, 100.0), glm::vec2(1.0, 1.0), 0.0);
+    truck.AddComponent<RigidBodyComponent>(glm::vec2(20.0, 0.0));
+    truck.AddComponent<SpriteComponent>("truck-image", 32, 32);
+}
+
+
 void	Game::Setup()
 {
-	// Add the systems that need to be processed in our game
-	registry->AddSystem<MovementSystem>();
-	registry->AddSystem<RenderSystem>();
-
-    assetManager->AddTexture(renderer, "tank-image", "../assets/images/tank-panther-right.png");
-    // assetManager->AddTexture(renderer, "truck-image", "./assets/images/truck-ford-right.png");
-
-	Entity tank = registry->CreateEntity();
-	tank.AddComponent<TransformComponent>(glm::vec2(10.0, 10.0), glm::vec2(1.0, 1.0), 0.0);
-	tank.AddComponent<RigidBodyComponent>(glm::vec2(40.0, 0.0));
-	tank.AddComponent<SpriteComponent>("tank-image", 32, 32);
+	LoadLevel(1);
 }
 
 void	Game::Update()

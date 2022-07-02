@@ -1148,7 +1148,11 @@ CMakeFiles/gameengine.dir/src/Game/Game.cpp.o: ../src/Game/Game.cpp \
   /usr/include/c++/9/bits/stl_map.h \
   /usr/include/c++/9/bits/stl_multimap.h \
   ../src/Logger/Logger.h \
-  ../src/AssetManager/AssetManager.h
+  ../src/AssetManager/AssetManager.h \
+  /usr/include/c++/9/fstream \
+  /usr/include/x86_64-linux-gnu/c++/9/bits/basic_file.h \
+  /usr/include/x86_64-linux-gnu/c++/9/bits/c++io.h \
+  /usr/include/c++/9/bits/fstream.tcc
 
 CMakeFiles/gameengine.dir/src/Logger/Logger.cpp.o: ../src/Logger/Logger.cpp \
   /usr/include/stdc-predef.h \
@@ -1910,10 +1914,20 @@ CMakeFiles/gameengine.dir/src/Main.cpp.o: ../src/Main.cpp \
   /usr/include/c++/9/bits/stl_multimap.h \
   ../src/Logger/Logger.h \
   ../src/AssetManager/AssetManager.h \
+  /usr/include/c++/9/fstream \
+  /usr/include/x86_64-linux-gnu/c++/9/bits/basic_file.h \
+  /usr/include/x86_64-linux-gnu/c++/9/bits/c++io.h \
+  /usr/include/c++/9/bits/fstream.tcc \
   ../src/Logger/Logger.h
 
 
 ../src/Logger/Logger.cpp:
+
+/usr/include/c++/9/bits/fstream.tcc:
+
+/usr/include/x86_64-linux-gnu/c++/9/bits/basic_file.h:
+
+/usr/include/c++/9/fstream:
 
 ../src/Systems/RenderSystem.h:
 
@@ -2264,6 +2278,8 @@ CMakeFiles/gameengine.dir/src/Main.cpp.o: ../src/Main.cpp \
 /usr/include/x86_64-linux-gnu/bits/fp-logb.h:
 
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
+
+/usr/include/x86_64-linux-gnu/c++/9/bits/c++io.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
