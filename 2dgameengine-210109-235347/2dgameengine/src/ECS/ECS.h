@@ -205,7 +205,7 @@ void Registry::AddComponent(Entity entity, TArgs&& ...args)
 	TComponent newComponent(std::forward<TArgs>(args)...);
 	currentComponentPool->Set(entityId, newComponent);
 	entityComponentSignatures[entityId].set(componentId);
-	Logger::Log("Component ID: " + std::to_string(componentId) + " was added to the Entity ID: " + std::to_string(entityId));
+	// Logger::Log("Component ID: " + std::to_string(componentId) + " was added to the Entity ID: " + std::to_string(entityId));
 }
 
 template <typename TComponent>

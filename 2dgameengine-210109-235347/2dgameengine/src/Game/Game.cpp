@@ -141,12 +141,31 @@ void Game::LoadLevel(int level) {
     // Load the tilemap
     int tileSize = 32;
     double tileScale = 1.0;
-    int mapNumCols = 25;
-    int mapNumRows = 20;
+    int mapNumCols = 1;
+    static int mapNumRows = 0;
+	std::string fileRow = "";
+	size_t pos = 0;
 
     std::fstream mapFile;
     mapFile.open("../assets/tilemaps/jungle.map");
+	
+	while (getline(mapFile, fileRow))
+	{
+		while (pos < fileRow.size())
+		{
+			char ch;
+			mapFile.get(ch);
+			if (ch == ',')
+				mapNumCols++;
+			pos++;
+		}
+		mapNumRows++;
+	}
+	std::cout << "mapNumRows: " << std::to_string(mapNumRows) << std::endl;
+	std::cout << "mapNumCols: " << std::to_string(mapNumCols) << std::endl;
+	mapFile.close();
 
+	mapFile.open("../assets/tilemaps/jungle.map");
     for (int y = 0; y < mapNumRows; y++) {
         for (int x = 0; x < mapNumCols; x++) {
             char ch;
